@@ -21,21 +21,14 @@ ActiveRecord::Schema.define(version: 20130411001138) do
 
   create_table "ingredient_categories", force: true do |t|
     t.string   "name"
-    t.integer  "box_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "ingredient_category_items", force: true do |t|
-    t.string   "name"
-    t.integer  "ingredient_item_id"
+    t.integer  "box_id"
     t.integer  "ingredient_category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "ingredient_items", force: true do |t|
-    t.string   "name"
+    t.integer  "quantity"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -5,7 +5,7 @@ class BoxesController < ApplicationController
 
   def show
     @box = Box.find(params[:id])
-    @ingredient_categories = IngredientCategory.paginate(page: params[:page])
+    @ingredient_categories = @box.ingredient_categories.paginate(page: params[:page])
   end
 
   def new
